@@ -6,7 +6,7 @@ cat << EOF
 
 (1) Hello Window
 (2) Hello Triangle
-(3) project dir
+(3) Shaders
 
 EOF
 read -p "select a demo from above to run to: " input
@@ -19,16 +19,17 @@ case $input in
    ./app
    rm ${app_dir}/app;;
 
-2) echo "Enter target directory:"
-read dir
-cd $dir;;
-3) echo "Enter a file name:"
-read file
-touch $file;;
-4) echo "Enter a file name:"
-read file
-vi $file;;
-5) echo "Enter a file nmae:"
-read file
-rm $file;;
+2) source_path=${root_path}/2_hello_triangle/src.cpp
+   app_dir=${root_path}/2_hello_triangle
+   g++ -o ${app_dir}/app ${source_path} ${glad_path} -lglfw3 -lm -lXrandr -lXi -lX11 -lpthread -ldl -lXinerama -lXcursor
+   cd ${app_dir}
+   ./app
+   rm ${app_dir}/app;;
+
+3) source_path=${root_path}/3_shaders/src.cpp
+   app_dir=${root_path}/3_shaders
+   g++ -o ${app_dir}/app ${source_path} ${glad_path} -lglfw3 -lm -lXrandr -lXi -lX11 -lpthread -ldl -lXinerama -lXcursor
+   cd ${app_dir}
+   ./app
+   rm ${app_dir}/app;;
 esac
