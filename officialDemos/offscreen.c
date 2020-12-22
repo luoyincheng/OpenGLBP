@@ -105,7 +105,7 @@ int main(void)
     }
 
     glfwMakeContextCurrent(window);
-    gladLoadGL(glfwGetProcAddress);
+    gladLoadGL();
 
     // NOTE: OpenGL error checks have been omitted for brevity
 
