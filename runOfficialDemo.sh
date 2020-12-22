@@ -29,8 +29,8 @@ case $input in
 8) source_path=${source_dir}/splitview.c;;
 9) source_path=${source_dir}/wave.c;;
 esac
-   g++ -o ${root_path}/app ${source_path} ${glad_path} -lglfw3 -lm -lXrandr -lXi -lX11 -lpthread -ldl -lXinerama -lXcursor
-   cd ${root_path}
-   ./app
-   rm ${root_path}/app
+ g++ -o ${root_path}/app ${source_path} ${glad_path} -lglfw3 -lm -lXrandr -lXi -lX11 -lpthread -ldl -lXinerama -lXcursor
+ cd ${root_path}
+ ./app
+ rm ${root_path}/app
 # g++ -o ~/Desktop/projects/OpenGLBP/out ~/Desktop/projects/OpenGLBP/gears.c ~/Desktop/projects/OpenGLBP/glad.c -lglfw3 -lm -lXrandr -lXi -lX11 -lpthread -ldl -lXinerama -lXcursor

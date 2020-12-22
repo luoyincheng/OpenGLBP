@@ -13,23 +13,12 @@ EOF
 read -p "select a demo from above to run to: " input
 case $input in 
 
-1) source_path=${root_path}/1_hello_window/src.cpp
-   g++ -o ${root_path}/app ${source_path} ${glad_path} -lglfw3 -lm -lXrandr -lXi -lX11 -lpthread -ldl -lXinerama -lXcursor
-   cd ${root_path}
-   ./app
-   rm ${root_path}/app;;
-
-2) source_path=${root_path}/2_hello_triangle/src.cpp
-   g++ -o ${root_path}/app ${source_path} ${glad_path} -lglfw3 -lm -lXrandr -lXi -lX11 -lpthread -ldl -lXinerama -lXcursor
-   cd ${root_path}
-   ./app
-   rm ${root_path}/app;;
-
-3) source_path=${root_path}/3_shaders/src.cpp
-   g++ -o ${root_path}/app ${source_path} ${glad_path} -lglfw3 -lm -lXrandr -lXi -lX11 -lpthread -ldl -lXinerama -lXcursor
-   cd ${root_path}
-   ./app
-   rm ${root_path}/app;;
+1) source_path=${root_path}/learningOpenGL/1_hello_window/src.cpp;;
+2) source_path=${root_path}/learningOpenGL/2_hello_triangle/src.cpp;;
+3) source_path=${root_path}/learningOpenGL/3_shaders/src.cpp;;
 esac
-
+ g++ -o ${root_path}/app ${source_path} ${glad_path} -lglfw3 -lm -lXrandr -lXi -lX11 -lpthread -ldl -lXinerama -lXcursor
+ cd ${root_path}
+ ./app
+ rm ${root_path}/app
 # g++ -o ~/Desktop/projects/OpenGLBP/out ~/Desktop/projects/OpenGLBP/gears.c ~/Desktop/projects/OpenGLBP/glad.c -lglfw3 -lm -lXrandr -lXi -lX11 -lpthread -ldl -lXinerama -lXcursor
