@@ -23,7 +23,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <linmath.h>
+#include "../common/linmath.h"
 
 
 //========================================================================
@@ -514,7 +514,7 @@ int main(void)
 
     // Enable vsync
     glfwMakeContextCurrent(window);
-    gladLoadGL(glfwGetProcAddress);
+    gladLoadGL();
     glfwSwapInterval(1);
 
     if (GLAD_GL_ARB_multisample || GLAD_GL_VERSION_1_3)

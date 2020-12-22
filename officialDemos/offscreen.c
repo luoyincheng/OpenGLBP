@@ -32,13 +32,13 @@
  #include <GLFW/glfw3native.h>
 #endif
 
-#include "linmath.h"
+#include "../common/linmath.h"
 
 #include <stdlib.h>
 #include <stdio.h>
 
 #define STB_IMAGE_WRITE_IMPLEMENTATION
-#include <stb_image_write.h>
+#include "../common/stb_image_write.h"
 
 static const struct
 {
@@ -148,6 +148,7 @@ int main(void)
     glUseProgram(program);
     glUniformMatrix4fv(mvp_location, 1, GL_FALSE, (const GLfloat*) mvp);
     glDrawArrays(GL_TRIANGLES, 0, 3);
+    glFinish();
 
 #if USE_NATIVE_OSMESA
     glfwGetOSMesaColorBuffer(window, &width, &height, NULL, (void**) &buffer);

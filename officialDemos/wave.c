@@ -21,7 +21,7 @@
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 
-#include <linmath.h>
+#include "../common/linmath.h"
 
 // Maximum delta T to allow for differential calculations
 #define MAX_DELTA_T 0.01
@@ -413,7 +413,7 @@ int main(int argc, char* argv[])
     glfwSetScrollCallback(window, scroll_callback);
 
     glfwMakeContextCurrent(window);
-    gladLoadGL(glfwGetProcAddress);
+    gladLoadGL();
     glfwSwapInterval(1);
 
     glfwGetFramebufferSize(window, &width, &height);

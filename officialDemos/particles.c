@@ -35,9 +35,9 @@
 #include <math.h>
 #include <time.h>
 
-#include <tinycthread.h>
+#include "../common/tinycthread.h"
 #include <getopt.h>
-#include <linmath.h>
+#include "../common/linmath.h"
 
 #include <glad/glad.h>
 #define GLFW_INCLUDE_NONE
@@ -995,7 +995,7 @@ int main(int argc, char** argv)
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
     glfwMakeContextCurrent(window);
-    gladLoadGL(glfwGetProcAddress);
+    gladLoadGL();
     glfwSwapInterval(1);
 
     glfwSetFramebufferSizeCallback(window, resize_callback);

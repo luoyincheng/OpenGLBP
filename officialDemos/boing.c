@@ -40,7 +40,7 @@
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 
-#include <linmath.h>
+#include "../common/linmath.h"
 
 
 /*****************************************************************************
@@ -643,7 +643,7 @@ int main( void )
    glfwSetCursorPosCallback(window, cursor_position_callback);
 
    glfwMakeContextCurrent(window);
-   gladLoadGL(glfwGetProcAddress);
+   gladLoadGL();
    glfwSwapInterval( 1 );
 
    glfwGetFramebufferSize(window, &width, &height);

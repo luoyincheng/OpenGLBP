@@ -12,9 +12,10 @@ cat << EOF
 (4) offscreen
 (5) particles
 (6) sharing
-(7) simple
-(8) splitview
+(7) splitview
+(8) triangle
 (9) wave
+(10) windows
 
 EOF
 read -p "select a demo from above to run to: " input
@@ -25,9 +26,10 @@ case $input in
 4) source_path=${source_dir}/offscreen.c;;
 5) source_path=${source_dir}/particles.c;;
 6) source_path=${source_dir}/sharing.c;;
-7) source_path=${source_dir}/simple.c;;
-8) source_path=${source_dir}/splitview.c;;
+7) source_path=${source_dir}/splitview.c;;
+8) source_path=${source_dir}/triangle-opengl.c;;
 9) source_path=${source_dir}/wave.c;;
+10) source_path=${source_dir}/windows.c;;
 esac
  g++ -o ${root_path}/app ${source_path} ${glad_path} -lglfw3 -lm -lXrandr -lXi -lX11 -lpthread -ldl -lXinerama -lXcursor
  cd ${root_path}
